@@ -1,4 +1,8 @@
 FROM centos/httpd-24-centos7
 USER root
-RUN yum install -y wget zip unzip bzip2 tar rsync  && yum clean all
+RUN yum -y install wget zip unzip bzip2 
+RUN yum -y install tar 
+RUN yum -y install rsync
+RUN yum -y groupinstall "Development Tools"
+RUN yum -y update
 USER 1001
